@@ -1,0 +1,245 @@
+* {
+    margin: 0px;
+}
+
+body {
+    font-family: Verdana;
+    background-color: #f2f2f2;
+}
+
+#navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 50px;
+    background-color: #00BCD4;
+}
+
+#navigation li {
+    height: 25px;
+    float: left;
+    display: inline;
+    background-color: #00BCD4;
+    padding: 12px;
+}
+
+#navigation a {
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    display: block;
+    color: white;
+}
+
+#navigation li:hover {
+    background-color: #00cbe6;
+}
+
+#navigation li:active {
+    background-color: white;
+}
+
+#navigation #signout {
+    float: right;
+}
+
+#title {
+    left: 50%;
+    transform: translate(0%, -50%);
+}
+
+#leftbar {
+    float: left;
+    width: calc(25% - 10px);
+    height: 500px;
+    background-color: #f2f2f2;
+    margin: 5px;
+    margin-top: 25px;
+    border-radius: 2px;
+}
+
+#rightbar {
+    float: left;
+    margin: 5px;
+    margin-top: 25px;
+    width: calc(25% - 12px);
+    background-color: #fff;
+    height: 500px;
+    border: 1px solid #b3b3b3;
+}
+
+main {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    float: left;
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    margin-top: 20px;
+}
+
+#header_shadow {
+    height: 5px;
+    width: 100%;
+    background-image: -webkit-linear-gradient(top, #bfbfbf, #f4f4f4);
+    background-image: -moz-linear-gradient(top, #bfbfbf, #f4f4f4);
+    background-image: -ms-linear-gradient(top, #bfbfbf, #f4f4f4);
+    background-image: -o-linear-gradient(top, #bfbfbf, #f4f4f4);
+    background-image: linear-gradient(to bottom, #bfbfbf, #f4f4f4);
+}
+
+#post {
+    height: 120px;
+    background: #00BCD4;
+    padding: 20px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 1px #a6a6a6;
+}
+
+#post #profilepic {
+    width: 50px;
+    height: 50px;
+    bottom: 10px;
+    float: left;
+}
+
+#post #inputText {
+    margin-left: 15px;
+    padding: 3px;
+    float: left;
+    width: 85%;
+    height: 45px;
+    position:relative;
+    font-size:12px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+    resize: none;
+    font-family: Verdana;
+}
+
+input[type=button], input[type=reset] {
+    background-color: #ff8000;
+    float: right;
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#button_send{
+    position:absolute;
+    margin-top:60px;
+    margin-left:-76px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+    background-color: #ff8000;
+    float: right;
+    border: none;
+    padding: 8px 16px;
+    color: black;
+    cursor: pointer;
+}
+#button_send:hover{
+    background-color:#ff9933;
+}
+
+main article {
+    margin-top: 10px;
+    padding: 50px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 3px 3px 1px #a6a6a6;
+}
+
+#rightbar #profilepic {
+    margin: auto;
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+    display: block;
+    border-radius: 100px;
+}
+
+#rightbar p {
+    text-align: center;
+    font-size: 140%;
+    color: black;
+    margin: 10px;
+}
+
+#rightbar h3 {
+    margin-top: 20px;
+    margin-left: 10%;
+}
+
+#rightbar li {
+    list-style-type: none;
+}
+
+#rightbar li a {
+    text-decoration: none;
+    color: blue;
+}
+
+
+.ad {
+    width: calc(100% - 10px);
+    height: auto;
+    margin: 5px;
+}
+
+.tile:hover {
+    background-color: #00cbe6;
+}
+
+.tile {
+    background-color: #00BCD4;
+    height: 25px;
+    float: right;
+    margin-top: 0px;
+    border-left: 1px solid #f2f2f2;
+    border-right: 1px solid #f2f2f2;
+}
+
+#profilepage {
+    border-left: none;
+}
+
+hr{
+    margin-top:20px;
+    color:
+}
+
+#logo {
+    margin-top: 5px;
+    height: 40px;
+    width: 40px;
+}
+
+#logo_section {
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    position: absolute;
+    margin-top: -50px;
+}
+
+#trend_list {
+    margin-top: 20px;
+
+}
+
+#trend_list > li {
+    margin-top: 20px;
+    line-heigth: 120%;
+}
+#trend_list > li:hover{
+    font-size: 120%;
+}
