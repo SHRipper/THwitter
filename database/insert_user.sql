@@ -1,4 +1,4 @@
-use thwitter;
+use THwitterDB;
 
 insert into 
 User (

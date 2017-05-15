@@ -8,34 +8,34 @@
 <body>
 
 <?php
-$host = "localhost";
-$username = "RubberDuck";
-$password = "WebProg";
-$conn = new PDO("mysql:dbname=;host=$host", $username, $password);
+//$host = "localhost";
+//$username = "RubberDuck";
+//$password = "WebProg";
+//$conn = new PDO("mysql:dbname=;host=$host", $username, $password);
 ?>
 
 <nav id="navigation">
     <ul>
-        <li class="tile" id="startpage"><a href="/THwitter/design/php/main/main.php">Startseite</a></li>
+        <li class="tile" id="startpage"><a href="main.php">Startseite</a></li>
         <li class="tile" id="profilepage"><a href="#">Profil</a></li>
-        <li id="signout" class="tile"><a href="/THwitter/design/php/login/login.php">Abmelden</a></li>
+        <li id="signout" class="tile"><a href="../login/login.php">Abmelden</a></li>
     </ul>
-    <section id="logo_section">
-        <img src="/THwitter/design/images/duck_logo.png" id="logo">
-    </section>
+
+    <img src="../../images/duck_logo.png" id="logo">
+
 </nav>
 <section id="header_shadow"></section>
 
 
 <aside id="leftbar">
-    <img class="ad" src="/THwitter/design/images/justPicture1.jpg"/>
-    <img class="ad" src="/THwitter/design/images/justPicture2.jpg"/>
+    <img class="ad" src="../../images/justPicture1.jpg"/>
+    <img class="ad" src="../../images/justPicture2.jpg"/>
 </aside>
 
 <main>
     <section id="post">
         <form>
-            <img id="profilepic" src="/THwitter/design/images/profilbild.jpg"/>
+            <img id="profilepic" src="../../images/profilbild.jpg"/>
             <textarea id="inputText" name="text" placeholder="Enter text here."></textarea>
             <input id="button_send" type="submit" value="Senden">
         </form>
@@ -106,7 +106,7 @@ $conn = new PDO("mysql:dbname=;host=$host", $username, $password);
 
 <aside id="rightbar">
     <section id="profile_section">
-        <img id="profilepic" src="/THwitter/design/images/profilbild.jpg"/>
+        <img id="profilepic" src="../../images/profilbild.jpg"/>
         <p>Hans Vader</p>
     </section>
     <hr/>

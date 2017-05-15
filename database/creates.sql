@@ -1,6 +1,6 @@
-use thwitter;
+use THwitterDB;
 
-create schema thwitter;
+create schema THwitterDB;
 
 create table Post(
 	post_id integer auto_increment, 

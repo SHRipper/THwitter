@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="/Thwitter/design/style/login_registration_style.css">
+    <link rel="stylesheet" type="text/css" href="../../style/login_registration_style.css">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
     </section>
 
     <section id="header_wrapper">
-        <img id="logo" src="/Thwitter/design/images/duck_logo.png" alt="[THwitter logo]">
+        <img id="logo" src="../../images/duck_logo.png" alt="[THwitter logo]">
         <section id="site_name_wrapper">
             <h1 id="site_name">THwitter</h1>
         </section>
@@ -59,7 +59,7 @@
                 <li id="section_login_register">
                     <a class="login_button" href="">Registrieren</a>
                     <section id="register_section">
-                        <p>oder <a class="register_link" href="login_mit_ente_deutsch.html">anmelden</a></p>
+                        <p>oder <a class="register_link" href="../login/login.php">anmelden</a></p>
                     </section>
                 </li>
             </ul>
@@ -70,12 +70,12 @@
         <p id="register_agb">By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use. Others will be able to find you by searching for your email address. Also we are saving your password in plaintext.</p>
     </section>
 
-    <img id="upper_grass" class="grass environment" src="/Thwitter/design/images/grass.png">
-    <img id="water"class="environment" src="/Thwitter/design/images/water.png">
+    <img id="upper_grass" class="grass environment" src="../../images/grass.png">
+    <img id="water"class="environment" src="../../images/water.png">
     <div id="duck_move_wrapper">
-        <img id="duck" src="/Thwitter/design/images/duck_logo.png">
+        <img id="duck" src="../../images/duck_logo.png">
     </div>
-    <img class="grass environment" id="lower_grass" src="/Thwitter/design/images/grass.png">
+    <img class="grass environment" id="lower_grass" src="../../images/grass.png">
 </main>
 </body>
 

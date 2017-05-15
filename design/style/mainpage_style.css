@@ -214,32 +214,35 @@ main article {
 
 hr{
     margin-top:20px;
-    color:
+    color: black;
 }
 
 #logo {
-    margin-top: 5px;
     height: 40px;
     width: 40px;
-}
-
-#logo_section {
-    width: 100%;
-    height: 25px;
-    text-align: center;
     position: absolute;
-    margin-top: -50px;
+    margin-left: calc(50% - 20px);
+    margin-top: -45px;
 }
 
 #trend_list {
     margin-top: 20px;
-
+    position: relative;
 }
-
 #trend_list > li {
-    margin-top: 20px;
-    line-heigth: 120%;
+    position: absolute;
+    font-size: 100%;
+    transition: font-size .1s ease-in-out;
 }
+
+#trend_list li:nth-child(2){
+    margin-top: 40px;
+}
+
+#trend_list li:nth-child(3){
+    margin-top: 80px;
+}
+
 #trend_list > li:hover{
-    font-size: 120%;
+    font-size: 110%;
 }

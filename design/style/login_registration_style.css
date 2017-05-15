@@ -162,10 +162,6 @@ input {
     margin-top: 15px;
 }
 
-.input_error {
-    border-color: red;
-}
-
 .textbox {
     color: grey;
     width: 250px;
@@ -175,6 +171,16 @@ input {
     border-color: #00BCD4;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.input_error {
+    border-color: red;
+}
+
+#input_error_notify{
+    color: red;
+    font-size: 14px;
+    display: none;
 }
 
 .textbox:focus {

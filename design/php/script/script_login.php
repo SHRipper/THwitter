@@ -1,36 +1,53 @@
 <?php
-echo "hallo";
-	if ($_POST['input_username'] == '' or $_POST['input_password'] == ''){
-		echo "<script>
+
+if ($_GET["username"] == '' or $_GET["password"] == '') {
+    debug("one field not written");
+    return_with_error();
+} else {
+    $username = $_GET["username"];
+    $password = $_GET["password"];
+
+    // connection to use when running on the server
+    //$pdo = new PDO("mysql:dbname=THwitterDB;host=localhost", "RubberDuck", "");
+
+    // debug connection to local database
+    $pdo = new PDO("mysql:dbname=thwitterdb;host=localhost", "root", "");
+
+    $sql = "SELECT password FROM User where lower(username) = ?";
+    $statement = $pdo->prepare($sql);
+    if ($statement->execute(array(strtolower($username)))) {
+
+        if ($statement->rowCount() == 0){
+            return_with_error();
+        }else {
+            // data exists for given username
+            $row = $statement->fetch();
+            debug("statement correct. row: " . $row['password']);
+            if ($row['password'] == $password) {
+                echo "<script>window.location='/THwitter/design/php/main/main.php'</script>";
+            } else {
+                echo "<script>window.location='/THwitter/design/php/login/login.php'</script>";
+            }
+        }
+        $statement->free();
+    }else{
+        // error while executing the statement
+        debug("error my frieeend");
+    }
+    die();
+}
+
+function debug( $data ) {
+    $output = $data;
+    if ( is_array( $output ) )
+        $output = implode( ',', $output);
+
+    echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
+}
+
+function return_with_error(){
+    echo "<script>
 		window.location='/THwitter/design/php/login/login.php?err=true';
 		</script>";
-		die();
-	}else{
-	    /*
-        $host = "localhost";
-        $username = "RubberDuck";
-        $password = "WebProg";
-        $conn = new PDO("mysql:dbname=THwitterDB;host=$host", $username, $password);
-        echo "asdlfja";
-    }
-        */
-                $mysqli = new mysqli("localhost","RubberDuck","WebProg","THwitterDB");
-                $mysqli->set_charset("utf8");
-                if ($mysqli->connect_errno) {
-                    die("Verbindung zur MySQL Datenbank fehlgeschlagen.");
-                }
-
-                $sql = "select password from user where email = ".$_POST['input_username'].";";
-                $res = $mysqli->query($sql);
-                $row = $res->fetch_assoc();
-                $user_password = $row['password'];
-                if ($user_password == $_POST['input_password']){
-                    echo "<script>window.location='/THwitter/design/php/main/main.php'</script>";
-                }else{
-                    echo "<script>window.location='/THwitter/design/php/login/login.php'</script>";
-                }
-                $res->free();
-                echo "hallo" . $row['user_id'] . " " . $row['username'];
-            }
-
-?>
+    die();
+}
