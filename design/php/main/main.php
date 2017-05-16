@@ -3,6 +3,7 @@
 <head>
     <title>Startseite</title>
     <link rel="stylesheet" href="../../style/mainpage_style.css" type="text/css">
+    <?php session_start(); ?>
 </head>
 
 <body>
@@ -36,8 +37,8 @@
     </section>
 
     <?php
-    $pdo = new PDO("mysql:dbname=THwitterDB;host=localhost", "RubberDuck", "WebProg");
-    $sql = "SELECT * FROM Post p ORDER By p.timestamp DESC;";
+    $pdo = new PDO("mysql:dbname=THwitterDB;host=duck.servebeer.com", "RubberDuck", "WebProg");
+    $sql = "SELECT * FROM Post p ORDER BY p.timestamp DESC;";
     $statement = $pdo->prepare($sql);
     $statement->execute();
 
@@ -50,8 +51,8 @@
 
 <aside id="rightbar">
     <section id="profile_section">
-        <img id="profilepic" src=" ../../images / profilbild . jpg"/>
-        <p>Hans Vader</p>
+        <img id="profilepic" src=" ../../images/profilbild.jpg"/>
+        <p><?php echo $_SESSION['username']; ?></p>
     </section>
     <hr/>
     <section id="trend_section">

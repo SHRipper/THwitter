@@ -6,7 +6,7 @@
     <script language="JavaScript" src="../../js/validate.js"></script>
 </head>
 
-<body>
+<body onload="enter_listener();">
 <header id="login_header">
     <section class="tile" id="section_language">
         <a href="" class="inactive_link" id="language_link">Sprache</a>
@@ -46,13 +46,19 @@
         <form id="login_form" action="../script/script_register.php" method="get">
             <ul>
                 <li>
-                    <input class="textbox" placeholder="username" name="username" type="text">
+                    <label class="error_desc" id="user_exists_error">Dieser Username ist bereits vergeben!</label>
                 </li>
                 <li>
-                    <input class="textbox" placeholder="email" name="email" type="text">
+                    <input class="textbox" id="input_username" placeholder="username" name="username" type="text">
                 </li>
                 <li>
-                    <label id="input_error_notify">Die Passwörter stimmen nicht überein!</label>
+                    <label class="error_desc" id="email_exists_error">Diese Email Adresse existiert bereits!</label>
+                </li>
+                <li>
+                    <input class="textbox" id="input_email" placeholder="email" name="email" type="text">
+                </li>
+                <li>
+                    <label class="error_desc" id="pw_no_match_error">Die Passwörter stimmen nicht überein!</label>
                 </li>
                 <li>
                     <input class="textbox" id="input_password" placeholder="password" name="password" type="password">
@@ -62,12 +68,10 @@
                 </li>
                 <li id="section_login_register">
                     <a class="login_button"
-                       onclick="if (comparePasswords()) document.getElementById('login_form').submit();">Registrieren</a>
+                       onclick="validate_register_input();">Registrieren</a>
                     <section id="register_section">
                         <p>oder <a class="register_link" href="../login/login.php">anmelden</a></p>
                     </section>
-                    <!-- invisible button to submit the form on return click -->
-                    <input type="submit" style="display:none"/>
                 </li>
             </ul>
         </form>
@@ -84,6 +88,13 @@
     </div>
     <img class="grass environment" id="lower_grass" src="../../images/grass.png">
 </main>
+
+<?php
+if (isset($_GET['err'])) {
+    $error_type = $_GET['err'];
+    echo "<script>register_error('" . $error_type . "');</script>";
+}
+?>
 </body>
 
 </html>
