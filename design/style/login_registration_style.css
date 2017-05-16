@@ -177,7 +177,7 @@ input {
     border-color: red;
 }
 
-#input_error_notify{
+.error_desc {
     color: red;
     font-size: 14px;
     display: none;

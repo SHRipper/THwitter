@@ -57,7 +57,7 @@
 			<form action="../script/script_login.php" id="login_form" method="get">
 				<ul>
                     <li>
-                        <label id="input_error_notify">
+                        <label class="error_desc" id="login_error_notify">
                             <?php
                             echo $choose_language[$language]["input_error"];
                             ?>
@@ -104,7 +104,7 @@
 
     <?php
     if (isset($_GET['err']) && $_GET['err'] == 'true'){
-        echo "<script>input_error();</script>";
+        echo "<script>login_error();</script>";
     }
     ?>
 </body>
