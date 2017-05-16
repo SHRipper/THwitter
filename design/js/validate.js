@@ -1,8 +1,13 @@
 function comparePasswords() {
-    var pw1 = document.getElementById('');
-    var pw2 = document.getElementById('');
-    if (pw1.innerHTML != pw2.innerHTML) {
-        pw1.className += 'input_error';
+    var pw1 = document.getElementById('input_password');
+    var pw2 = document.getElementById('input_password_confirm');
+    var infobox = document.getElementById('input_error_notify');
+
+    if (pw1.innerHTML != pw2.innerHTML || (pw1.innerHTML == '' && pw2.innerHTML == '')) {
+        pw1.className += ' input_error';
+        pw2.className += ' input_error';
+        infobox.style.display = 'block';
+        infobox.style.marginTop = '10px';
         return false;
     }
     return true;

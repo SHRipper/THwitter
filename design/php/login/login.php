@@ -5,8 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="../../style/login_registration_style.css">
 	<script src="/THwitter/design/js/validate.js"></script>
 </head>
-
-<body>
+<body onload="../script/script_connect_db.php">
 	<header id="login_header">
         <?php
         include 'script_language.php';

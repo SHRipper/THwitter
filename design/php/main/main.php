@@ -2,17 +2,10 @@
 <html>
 <head>
     <title>Startseite</title>
-    <link rel="stylesheet" href="/THwitter/design/style/mainpage_style.css" type="text/css">
+    <link rel="stylesheet" href="../../style/mainpage_style.css" type="text/css">
 </head>
 
 <body>
-
-<?php
-//$host = "localhost";
-//$username = "RubberDuck";
-//$password = "WebProg";
-//$conn = new PDO("mysql:dbname=;host=$host", $username, $password);
-?>
 
 <nav id="navigation">
     <ul>
@@ -33,80 +26,31 @@
 </aside>
 
 <main>
+
     <section id="post">
-        <form>
+        <form action="../script/main_send_submit_script.php" method="post">
             <img id="profilepic" src="../../images/profilbild.jpg"/>
             <textarea id="inputText" name="text" placeholder="Enter text here."></textarea>
             <input id="button_send" type="submit" value="Senden">
         </form>
     </section>
 
-    <article>
-        Das ist ein toller Beitrag
-    </article>
+    <?php
+    $pdo = new PDO("mysql:dbname=THwitterDB;host=localhost", "RubberDuck", "WebProg");
+    $sql = "SELECT * FROM Post p ORDER By p.timestamp DESC;";
+    $statement = $pdo->prepare($sql);
+    $statement->execute();
 
-    <article>
-        Das ist ein toller Beitrag
-    </article>
-
-    <article>
-        Das ist ein toller Beitrag
-    </article>
-
-    <article>
-        Das ist ein toller Beitrag
-    </article>
-    <article>
-        Das ist ein toller Beitrag
-    </article>
-
-    <article>
-        Das ist ein toller Beitrag
-    </article>
-
-    <article>
-        Das ist ein toller Beitrag
-    </article>
-
-    <article>
-        Das ist ein toller Beitrag
-    </article>
-    <article>
-        Das ist ein toller Beitrag
-    </article>
-
-    <article>
-        Das ist ein toller Beitrag
-    </article>
-
-    <article>
-        Das ist ein toller Beitrag
-    </article>
-
-    <article>
-        Das ist ein toller Beitrag
-    </article>
-    <article>
-        Das ist ein toller Beitrag
-    </article>
-
-    <article>
-        Das ist ein toller Beitrag
-    </article>
-
-    <article>
-        Das ist ein toller Beitrag
-    </article>
-
-    <article>
-        Das ist ein toller Beitrag
-    </article>
+    while ($row = $statement->fetch()) {
+        echo "<article>" . $row["message"] . "</article>";
+    }
+    ?>
 
 </main>
 
 <aside id="rightbar">
     <section id="profile_section">
-        <img id="profilepic" src="../../images/profilbild.jpg"/>
+        <img id="profilepic" src=" ../../images / profilbild . jpg"/>
         <p>Hans Vader</p>
     </section>
     <hr/>

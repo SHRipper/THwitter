@@ -29,5 +29,7 @@ create table Follow(
     references User(user_id)
 );
 
+SELECT *
+FROM User;
 
 
