@@ -1,19 +1,31 @@
 <?php
 include 'script_connect_db.php';
 
-$username = $_GET['username'];
-$email = $_GET['email'];
-$password = $_GET['password'];
+$username = strtolower($_GET['username']);
+$email = strtolower($_GET['email']);
+$password = strtolower($_GET['password']);
 
 if ($username == '' or $email == '') {
 
 } else {
-    $sql = "SELECT email,username FROM User WHERE lower(email)= lower(?) OR lower(username) = lower(?);";
+    $sql = "SELECT email,username 
+            FROM User
+            WHERE lower(email)= ? 
+            OR lower(username) = ?;";
     $statement = $pdo->prepare($sql);
     if ($statement->execute(array($email, $username))) {
         if ($statement->rowCount() == 0) {
             // insert new user
-            echo "insert new user";
+            $sql_new_user = "INSERT INTO User (
+                              username,email,password
+                              ) VALUES (
+                              ?,?,?
+                              );";
+            $statement = $pdo->prepare($sql_new_user);
+            $statement->execute(array($username, $email, $password));
+
+            // forward to main page
+            echo "<script>window.location='../main/main.php'</script>";
         } else {
             // user or email already exists
             $row = $statement->fetch();

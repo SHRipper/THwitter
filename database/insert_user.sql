@@ -23,3 +23,9 @@ SELECT
   username
 FROM User
 WHERE lower(email) = lower(?) OR lower(username) = lower(?);
+
+DELETE FROM THwitterDB.User
+WHERE user_id = 4;
+
+SELECT *
+FROM User;

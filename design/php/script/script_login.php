@@ -19,7 +19,7 @@ if ($_GET["username"] == '' or $_GET["password"] == '') {
         }
 
         // data exists for given username
-        echo "<script>window.location='/THwitter/design/php/main/main.php'</script>";
+        echo "<script>window.location='../main/main.php'</script>";
     } else {
         // error while executing the statement
         debug("error my frieeend");

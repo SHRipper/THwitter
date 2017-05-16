@@ -3,9 +3,9 @@
 <head>
 	<title>Anmelden</title>
 	<link rel="stylesheet" type="text/css" href="../../style/login_registration_style.css">
-	<script src="/THwitter/design/js/validate.js"></script>
+    <script src="../../js/validate.js"></script>
 </head>
-<body onload="../script/script_connect_db.php">
+<body>
 	<header id="login_header">
         <?php
         include 'script_language.php';
