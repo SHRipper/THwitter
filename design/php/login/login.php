@@ -21,19 +21,28 @@
         <a href="" class="inactive_link" id="language_link">Language</a>
         <ul id="ul_language">
             <li id="li_german">
-                <a href="login_mit_ente_deutsch.html">German</a>
+                <form id="login_form_german" method="get" action="login.php">
+                    <input type="hidden" name="language" value="german">
+                    <a onclick="document.getElementById('login_form_german').submit();">Deutsch</a>
+                </form>
             </li>
             <li id="li_english">
                 <form id="login_form_english" method="get" action="login.php">
-                    <input type="text" name="language" value="english" style="display:none">
-                    <a href="" onclick="document.getElementById('login_form_english').submit();">English</a>
+                    <input type="hidden" name="language" value="english">
+                    <a onclick="document.getElementById('login_form_english').submit();">English</a>
                 </form>
             </li>
             <li id="li_spanish">
-                <a href="login_mit_ente_spanish.html">Spanish</a>
+                <form id="login_form_spanish" method="get" action="login.php">
+                    <input type="hidden" name="language" value="spanish">
+                    <a onclick="document.getElementById('login_form_spanish').submit();">Spanish</a>
+                </form>
             </li>
             <li id="li_french">
-                <a href="login_mit_ente_french.html">French</a>
+                <form id="login_form_french" method="get" action="login.php">
+                    <input type="hidden" name="language" value="french">
+                    <a onclick="document.getElementById('login_form_french').submit();">French</a>
+                </form>
             </li>
         </ul>
     </section>
