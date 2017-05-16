@@ -25,7 +25,7 @@
             </li>
         </ul>
     </section>
-    <section  class="tile" id="section_about">
+    <section class="tile" id="section_about">
         <a href="" id="about_link">&Uuml;ber</a>
     </section>
 
@@ -46,18 +46,21 @@
         <form id="login_form" action="../script/script_register.php" method="get">
             <ul>
                 <li>
+                    <!-- only visible on certain event -->
                     <label class="error_desc" id="user_exists_error">Dieser Username ist bereits vergeben!</label>
                 </li>
                 <li>
                     <input class="textbox" id="input_username" placeholder="username" name="username" type="text">
                 </li>
                 <li>
+                    <!-- only visible on certain event -->
                     <label class="error_desc" id="email_exists_error">Diese Email Adresse existiert bereits!</label>
                 </li>
                 <li>
                     <input class="textbox" id="input_email" placeholder="email" name="email" type="text">
                 </li>
                 <li>
+                    <!-- only visible on certain event -->
                     <label class="error_desc" id="pw_no_match_error">Die Passwörter stimmen nicht überein!</label>
                 </li>
                 <li>
@@ -78,11 +81,13 @@
     </section>
     <section id="divider"></section>
     <section id="agb_section">
-        <p id="register_agb">By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use. Others will be able to find you by searching for your email address. Also we are saving your password in plaintext.</p>
+        <p id="register_agb">By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use.
+            Others will be able to find you by searching for your email address. Also we are saving your password in
+            plaintext.</p>
     </section>
 
     <img id="upper_grass" class="grass environment" src="../../images/grass.png">
-    <img id="water"class="environment" src="../../images/water.png">
+    <img id="water" class="environment" src="../../images/water.png">
     <div id="duck_move_wrapper">
         <img id="duck" src="../../images/duck_logo.png">
     </div>
