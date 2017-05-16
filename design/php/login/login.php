@@ -22,19 +22,28 @@
 			<a href="" class="inactive_link" id="language_link">Language</a>
 			<ul id="ul_language">
 				<li id="li_german">
-					<a href="login_mit_ente_deutsch.html">German</a>
+                    <form id="login_form_german" method="get" action="login.php">
+                        <input type="text" name="language" value="german" style="display: none">
+                        <a onclick="document.getElementById('login_form_german').submit();">Deutsch</a>
+                    </form>
 				</li>
 				<li id="li_english">
                     <form id="login_form_english" method="get" action="login.php">
                         <input type="text" name="language" value="english" style="display:none">
-                        <a href="" onclick="document.getElementById('login_form_english').submit();">English</a>
+                        <a onclick="document.getElementById('login_form_english').submit();">English</a>
                     </form>
 				</li>
 				<li id="li_spanish">
-					<a href="login_mit_ente_spanish.html">Spanish</a>
+                    <form id="login_form_spanish" method="get" action="login.php">
+                        <input type="text" name="language" value="spanish" style="display: none">
+                        <a onclick="document.getElementById('login_form_spanish').submit();">Spanish</a>
+                    </form>
 				</li>
 				<li id="li_french">
-					<a href="login_mit_ente_french.html">French</a>
+                    <form id="login_form_french" method="get" action="login.php">
+                        <input type="text" name="language" value="french" style="display: none">
+                        <a onclick="document.getElementById('login_form_french').submit();">French</a>
+                    </form>
 				</li>
 			</ul>
 		</section>
@@ -105,7 +114,7 @@
 		</section>
 		
 		<img id="upper_grass" class="grass environment" src="../../images/grass.png">
-		<img id="water"class="environment" src="../../images/water.png">
+		<img id="water" class="environment" src="../../images/water.png">
 		<div id="duck_move_wrapper">
 			<img id="duck" src="../../images/duck_logo.png">
 		</div>
