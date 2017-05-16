@@ -3,6 +3,7 @@
 <head>
     <title>Register</title>
     <link rel="stylesheet" type="text/css" href="../../style/login_registration_style.css">
+    <script language="JavaScript" src="../../js/validate.js"></script>
 </head>
 
 <body>
@@ -42,25 +43,31 @@
     </section>
 
     <section id="login_section">
-        <form id="login_form">
+        <form id="login_form" action="../script/script_register.php" method="get">
             <ul>
                 <li>
-                    <input class="textbox" placeholder="username" name="input_username" type="text">
+                    <input class="textbox" placeholder="username" name="username" type="text">
                 </li>
                 <li>
-                    <input class="textbox" placeholder="email" name="input_email" type="text">
+                    <input class="textbox" placeholder="email" name="email" type="text">
                 </li>
                 <li>
-                    <input class="textbox" placeholder="password" name="input_password" type="password">
+                    <label id="input_error_notify">Die Passwörter stimmen nicht überein!</label>
                 </li>
                 <li>
-                    <input class="textbox" placeholder="confirm password" name="input_password_confirm" type="password">
+                    <input class="textbox" id="input_password" placeholder="password" name="password" type="password">
+                </li>
+                <li>
+                    <input class="textbox" id="input_password_confirm" placeholder="confirm password" type="password">
                 </li>
                 <li id="section_login_register">
-                    <a class="login_button" href="">Registrieren</a>
+                    <a class="login_button"
+                       onclick="if (comparePasswords()) document.getElementById('login_form').submit();">Registrieren</a>
                     <section id="register_section">
                         <p>oder <a class="register_link" href="../login/login.php">anmelden</a></p>
                     </section>
+                    <!-- invisible button to submit the form on return click -->
+                    <input type="submit" style="display:none"/>
                 </li>
             </ul>
         </form>

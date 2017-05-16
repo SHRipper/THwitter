@@ -7,29 +7,18 @@ if ($_GET["username"] == '' or $_GET["password"] == '') {
     $username = $_GET["username"];
     $password = $_GET["password"];
 
-    // connection to use when running on the server
-    //$pdo = new PDO("mysql:dbname=THwitterDB;host=localhost", "RubberDuck", "");
+    include 'script_connect_db.php';
 
-    // debug connection to local database
-    $pdo = new PDO("mysql:dbname=thwitterdb;host=localhost", "root", "");
-
-    $sql = "SELECT password FROM User WHERE lower(username) = ?";
+    $sql = "SELECT username FROM User WHERE lower(username) = lower(?) AND password = ?";
     $statement = $pdo->prepare($sql);
-    if ($statement->execute(array(strtolower($username)))) {
+    if ($statement->execute(array($username, $password))) {
 
-        if ($statement->rowCount() == 0)
-            return_with_error();
-
-        // data exists for given username
-        $row = $statement->fetch();
-        debug("statement correct. row: " . $row['password']);
-        if ($row['password'] == $password) {
-            echo "<script>window.location='/THwitter/design/php/main/main.php'</script>";
-        } else {
+        if ($statement->rowCount() == 0) {
             return_with_error();
         }
 
-        $statement->free();
+        // data exists for given username
+        echo "<script>window.location='/THwitter/design/php/main/main.php'</script>";
     } else {
         // error while executing the statement
         debug("error my frieeend");
