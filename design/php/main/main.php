@@ -36,7 +36,7 @@
     </section>
 
     <?php
-    $pdo = new PDO("mysql:dbname=THwitterDB;host=localhost", "RubberDuck", "WebProg");
+    $pdo = new PDO("mysql:dbname=THwitterDB;host=duck.servebeer.com", "RubberDuck", "WebProg");
     $sql = "SELECT * FROM Post p ORDER By p.timestamp DESC;";
     $statement = $pdo->prepare($sql);
     $statement->execute();
@@ -50,7 +50,7 @@
 
 <aside id="rightbar">
     <section id="profile_section">
-        <img id="profilepic" src=" ../../images / profilbild . jpg"/>
+        <img id="profilepic" src=" ../../images/profilbild.jpg"/>
         <p>Hans Vader</p>
     </section>
     <hr/>
