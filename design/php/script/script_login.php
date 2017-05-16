@@ -1,8 +1,9 @@
 <?php
+include 'script_errors.php';
 
 if ($_GET["username"] == '' or $_GET["password"] == '') {
     debug("one field not written");
-    return_with_error();
+    throw_login_error();
 } else {
     $username = $_GET["username"];
     $password = $_GET["password"];
@@ -14,7 +15,7 @@ if ($_GET["username"] == '' or $_GET["password"] == '') {
     if ($statement->execute(array($username, $password))) {
 
         if ($statement->rowCount() == 0) {
-            return_with_error();
+            throw_login_error();
         }
 
         // data exists for given username
@@ -35,10 +36,4 @@ function debug($data)
     echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
 }
 
-function return_with_error()
-{
-    echo "<script>
-		window.location='/THwitter/design/php/login/login.php?err=true';
-		</script>";
-    die();
-}
+

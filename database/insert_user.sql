@@ -18,4 +18,8 @@ username, email,password
 );
 
 
-select * from Follow u;
+SELECT
+  email,
+  username
+FROM User
+WHERE lower(email) = lower(?) OR lower(username) = lower(?);

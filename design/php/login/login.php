@@ -9,7 +9,14 @@
 	<header id="login_header">
         <?php
         include 'script_language.php';
-        $language = "german";
+        if(isset($_GET['language']))
+        {
+            $language = $_GET["language"];
+        }
+        else
+        {
+            $language = "german";
+        }
         ?>
 		<section class="tile" id="section_language">
 			<a href="" class="inactive_link" id="language_link">Language</a>
@@ -18,7 +25,10 @@
 					<a href="login_mit_ente_deutsch.html">German</a>
 				</li>
 				<li id="li_english">
-					<a href="login_mit_ente_english.html">English</a>
+                    <form id="login_form_english" method="get" action="login.php">
+                        <input type="text" name="language" value="english" style="display:none">
+                        <a href="" onclick="document.getElementById('login_form_english').submit();">English</a>
+                    </form>
 				</li>
 				<li id="li_spanish">
 					<a href="login_mit_ente_spanish.html">Spanish</a>
@@ -57,7 +67,7 @@
 			<form action="../script/script_login.php" id="login_form" method="get">
 				<ul>
                     <li>
-                        <label id="input_error_notify">
+                        <label class="error_desc" id="login_error_notify">
                             <?php
                             echo $choose_language[$language]["input_error"];
                             ?>
@@ -104,7 +114,7 @@
 
     <?php
     if (isset($_GET['err']) && $_GET['err'] == 'true'){
-        echo "<script>input_error();</script>";
+        echo "<script>login_error();</script>";
     }
     ?>
 </body>
