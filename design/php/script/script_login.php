@@ -1,5 +1,6 @@
 <?php
 include 'script_errors.php';
+session_start();
 
 if ($_GET["username"] == '' or $_GET["password"] == '') {
     debug("one field not written");
@@ -19,6 +20,7 @@ if ($_GET["username"] == '' or $_GET["password"] == '') {
         }
 
         // data exists for given username
+        $_SESSION['username'] = $username;
         echo "<script>window.location='../main/main.php'</script>";
     } else {
         // error while executing the statement
