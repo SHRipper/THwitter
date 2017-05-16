@@ -25,6 +25,8 @@ if ($username == '' or $email == '') {
             $statement->execute(array($username, $email, $password));
 
             // forward to main page
+            session_start();
+            $_SESSION['username'] = $username;
             echo "<script>window.location='../main/main.php'</script>";
         } else {
             // user or email already exists

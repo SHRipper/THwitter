@@ -4,12 +4,12 @@
     <title>Anmelden</title>
     <link rel="stylesheet" type="text/css" href="../../style/login_registration_style.css">
     <script src="../../js/validate.js"></script>
+    <?php include '../script/script_session.php'; ?>
 
 </head>
 <body>
 <header id="login_header">
     <?php
-    include '../script/script_session.php';
     include 'script_language.php';
     if (isset($_GET['language'])) {
         $language = $_GET["language"];
