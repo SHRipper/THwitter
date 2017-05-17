@@ -11,8 +11,8 @@
 <header id="login_header">
     <?php
     include 'script_language.php';
-    if (isset($_GET['language'])) {
-        $language = $_GET["language"];
+    if (isset($_GET['lang'])) {
+        $language = $_GET["lang"];
     } else {
         $language = "german";
     }
@@ -22,25 +22,25 @@
         <ul id="ul_language">
             <li id="li_german">
                 <form id="login_form_german" method="get" action="login.php">
-                    <input type="hidden" name="language" value="german">
+                    <input type="hidden" name="lang" value="german">
                     <a onclick="document.getElementById('login_form_german').submit();">Deutsch</a>
                 </form>
             </li>
             <li id="li_english">
                 <form id="login_form_english" method="get" action="login.php">
-                    <input type="hidden" name="language" value="english">
+                    <input type="hidden" name="lang" value="english">
                     <a onclick="document.getElementById('login_form_english').submit();">English</a>
                 </form>
             </li>
             <li id="li_spanish">
                 <form id="login_form_spanish" method="get" action="login.php">
-                    <input type="hidden" name="language" value="spanish">
+                    <input type="hidden" name="lang" value="spanish">
                     <a onclick="document.getElementById('login_form_spanish').submit();">Spanish</a>
                 </form>
             </li>
             <li id="li_french">
                 <form id="login_form_french" method="get" action="login.php">
-                    <input type="hidden" name="language" value="french">
+                    <input type="hidden" name="lang" value="french">
                     <a onclick="document.getElementById('login_form_french').submit();">French</a>
                 </form>
             </li>
