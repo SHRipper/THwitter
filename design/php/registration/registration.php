@@ -8,25 +8,49 @@
 
 <body onload="enter_listener();">
 <header id="login_header">
+    <?php
+    include '../script_language.php';
+    if (isset($_GET['lang'])) {
+        $language = $_GET["lang"];
+    } else {
+        $language = "german";
+    }
+    ?>
     <section class="tile" id="section_language">
-        <a href="" class="inactive_link" id="language_link">Sprache</a>
+        <a href="" class="inactive_link" id="language_link">Language</a>
         <ul id="ul_language">
             <li id="li_german">
-                <a href="registration_mit_ente_deutsch.html">German</a>
+                <form id="registration_form_german" method="get" action="registration.php">
+                    <input type="hidden" name="lang" value="german" style="display: none">
+                    <a onclick="document.getElementById('registration_form_german').submit();">Deutsch</a>
+                </form>
             </li>
             <li id="li_english">
-                <a href="registration_mit_ente_english.html">English</a>
+                <form id="registration_form_english" method="get" action="registration.php">
+                    <input type="hidden" name="lang" value="english" style="display: none">
+                    <a onclick="document.getElementById('registration_form_english').submit();">English</a>
+                </form>
             </li>
             <li id="li_spanish">
-                <a href="registration_mit_ente_spanish.html">Spanish</a>
+                <form id="registration_form_spanish" method="get" action="registration.php">
+                    <input type="hidden" name="lang" value="spanish" style="display: none">
+                    <a onclick="document.getElementById('registration_form_spanish').submit();">Spanish</a>
+                </form>
             </li>
             <li id="li_french">
-                <a href="registration_mit_ente_french.html">French</a>
+                <form id="registration_form_french" method="get" action="registration.php">
+                    <input type="hidden" name="lang" value="french" style="display: none">
+                    <a onclick="document.getElementById('registration_form_french').submit();">French</a>
+                </form>
             </li>
         </ul>
     </section>
     <section class="tile" id="section_about">
-        <a href="" id="about_link">&Uuml;ber</a>
+        <a href="" id="about_link">
+            <?php
+            echo $choose_language[$language]["about"];
+            ?>
+        </a>
     </section>
 
     <section id="header_wrapper">
