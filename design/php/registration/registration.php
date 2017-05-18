@@ -63,7 +63,11 @@
 <section id="header_shadow"></section>
 <main>
     <section id="welcome_text_wrapper">
-        <h2 id="welcome_text">Registriere dich jetzt und gewinne einen Toaster</h2>
+        <h2 id="welcome_text">
+            <?php
+            echo $choose_language[$language]["registration_welcome"];
+            ?>
+        </h2>
     </section>
 
     <section id="login_section">
@@ -71,21 +75,33 @@
             <ul>
                 <li>
                     <!-- only visible on certain event -->
-                    <label class="error_desc" id="user_exists_error">Dieser Username ist bereits vergeben!</label>
+                    <label class="error_desc" id="user_exists_error">
+                        <?php
+                        echo $choose_language[$language]["registration_error_user"];
+                        ?>
+                    </label>
                 </li>
                 <li>
                     <input class="textbox" id="input_username" placeholder="username" name="username" type="text">
                 </li>
                 <li>
                     <!-- only visible on certain event -->
-                    <label class="error_desc" id="email_exists_error">Diese Email Adresse existiert bereits!</label>
+                    <label class="error_desc" id="email_exists_error">
+                        <?php
+                        echo $choose_language[$language]["registration_error_email"];
+                        ?>
+                    </label>
                 </li>
                 <li>
                     <input class="textbox" id="input_email" placeholder="email" name="email" type="text">
                 </li>
                 <li>
                     <!-- only visible on certain event -->
-                    <label class="error_desc" id="pw_no_match_error">Die Passwörter stimmen nicht überein!</label>
+                    <label class="error_desc" id="pw_no_match_error">
+                        <?php
+                        echo $choose_language[$language]["registration_error_pw"];
+                        ?>
+                    </label>
                 </li>
                 <li>
                     <input class="textbox" id="input_password" placeholder="password" name="password" type="password">
@@ -97,7 +113,12 @@
                     <a class="login_button"
                        onclick="validate_register_input();">Registrieren</a>
                     <section id="register_section">
-                        <p>oder <a class="register_link" href="../login/login.php">anmelden</a></p>
+                        <p>
+                            <?php
+                            echo $choose_language[$language]["or"];
+                            ?>
+                            <a class="register_link" href="../login/login.php">anmelden</a>
+                        </p>
                     </section>
                 </li>
             </ul>
