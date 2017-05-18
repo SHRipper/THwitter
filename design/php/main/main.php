@@ -37,7 +37,7 @@
     </section>
 
     <?php
-    $pdo = new PDO("mysql:dbname=THwitterDB;host=duck.servebeer.com", "RubberDuck", "WebProg");
+    $pdo = new PDO("mysql:dbname=localhost", "RubberDuck", "WebProg");
     $sql = "SELECT * FROM Post p ORDER BY p.timestamp DESC;";
     $statement = $pdo->prepare($sql);
     $statement->execute();
