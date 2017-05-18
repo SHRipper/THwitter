@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PHPSpec">
     <settings>
-      <PhpTestFrameworkSettings executable_path="C:/xampp/php/php.exe" />
+      <PhpTestFrameworkSettings executable_path="" />
     </settings>
   </component>
 </project>

@@ -8,25 +8,49 @@
 
 <body onload="enter_listener();">
 <header id="login_header">
+    <?php
+    include '../script_language.php';
+    if (isset($_GET['lang'])) {
+        $language = $_GET["lang"];
+    } else {
+        $language = "german";
+    }
+    ?>
     <section class="tile" id="section_language">
-        <a href="" class="inactive_link" id="language_link">Sprache</a>
+        <a href="" class="inactive_link" id="language_link">Language</a>
         <ul id="ul_language">
             <li id="li_german">
-                <a href="registration_mit_ente_deutsch.html">German</a>
+                <form id="registration_form_german" method="get" action="registration.php">
+                    <input type="hidden" name="lang" value="german" style="display: none">
+                    <a onclick="document.getElementById('registration_form_german').submit();">Deutsch</a>
+                </form>
             </li>
             <li id="li_english">
-                <a href="registration_mit_ente_english.html">English</a>
+                <form id="registration_form_english" method="get" action="registration.php">
+                    <input type="hidden" name="lang" value="english" style="display: none">
+                    <a onclick="document.getElementById('registration_form_english').submit();">English</a>
+                </form>
             </li>
             <li id="li_spanish">
-                <a href="registration_mit_ente_spanish.html">Spanish</a>
+                <form id="registration_form_spanish" method="get" action="registration.php">
+                    <input type="hidden" name="lang" value="spanish" style="display: none">
+                    <a onclick="document.getElementById('registration_form_spanish').submit();">Spanish</a>
+                </form>
             </li>
             <li id="li_french">
-                <a href="registration_mit_ente_french.html">French</a>
+                <form id="registration_form_french" method="get" action="registration.php">
+                    <input type="hidden" name="lang" value="french" style="display: none">
+                    <a onclick="document.getElementById('registration_form_french').submit();">French</a>
+                </form>
             </li>
         </ul>
     </section>
     <section class="tile" id="section_about">
-        <a href="" id="about_link">&Uuml;ber</a>
+        <a href="" id="about_link">
+            <?php
+            echo $choose_language[$language]["about"];
+            ?>
+        </a>
     </section>
 
     <section id="header_wrapper">
@@ -39,7 +63,11 @@
 <section id="header_shadow"></section>
 <main>
     <section id="welcome_text_wrapper">
-        <h2 id="welcome_text">Registriere dich jetzt und gewinne einen Toaster</h2>
+        <h2 id="welcome_text">
+            <?php
+            echo $choose_language[$language]["registration_welcome"];
+            ?>
+        </h2>
     </section>
 
     <section id="login_section">
@@ -47,21 +75,33 @@
             <ul>
                 <li>
                     <!-- only visible on certain event -->
-                    <label class="error_desc" id="user_exists_error">Dieser Username ist bereits vergeben!</label>
+                    <label class="error_desc" id="user_exists_error">
+                        <?php
+                        echo $choose_language[$language]["registration_error_user"];
+                        ?>
+                    </label>
                 </li>
                 <li>
                     <input class="textbox" id="input_username" placeholder="username" name="username" type="text">
                 </li>
                 <li>
                     <!-- only visible on certain event -->
-                    <label class="error_desc" id="email_exists_error">Diese Email Adresse existiert bereits!</label>
+                    <label class="error_desc" id="email_exists_error">
+                        <?php
+                        echo $choose_language[$language]["registration_error_email"];
+                        ?>
+                    </label>
                 </li>
                 <li>
                     <input class="textbox" id="input_email" placeholder="email" name="email" type="text">
                 </li>
                 <li>
                     <!-- only visible on certain event -->
-                    <label class="error_desc" id="pw_no_match_error">Die Passwörter stimmen nicht überein!</label>
+                    <label class="error_desc" id="pw_no_match_error">
+                        <?php
+                        echo $choose_language[$language]["registration_error_pw"];
+                        ?>
+                    </label>
                 </li>
                 <li>
                     <input class="textbox" id="input_password" placeholder="password" name="password" type="password">
@@ -73,7 +113,12 @@
                     <a class="login_button"
                        onclick="validate_register_input();">Registrieren</a>
                     <section id="register_section">
-                        <p>oder <a class="register_link" href="../login/login.php">anmelden</a></p>
+                        <p>
+                            <?php
+                            echo $choose_language[$language]["or"];
+                            ?>
+                            <a class="register_link" href="../login/login.php">anmelden</a>
+                        </p>
                     </section>
                 </li>
             </ul>
