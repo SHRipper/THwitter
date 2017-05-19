@@ -98,7 +98,7 @@
                             <?php
                             echo $choose_language[$language]["or"];
                             ?>
-                            <a class="register_link" href="../script/script_login.php">
+                            <a class="register_link" href="../registration/registration.php">
                                 <?php
                                 echo $choose_language[$language]["register_link"];
                                 ?>
