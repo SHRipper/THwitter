@@ -37,10 +37,19 @@
     </section>
 
     <?php
-    $pdo = new PDO("mysql:dbname=THwitterDB;host=localhost", "RubberDuck", "WebProg");
-    $sql = "SELECT * FROM Post p ORDER BY p.timestamp DESC;";
+    include '../script/script_connect_db.php';
+    //Show all: $sql = "SELECT * FROM Post p ORDER BY p.timestamp DESC;";
+
+    //zeige nur posts von leuten denen ich folge
+    $sql = "SELECT
+  p.post_id,
+  p.sender_id,
+  p.message
+  FROM Post p, Follow f
+WHERE (p.sender_id = f.star_id OR  p.sender_id = (SELECT u.user_id FROM User u WHERE u.username = ?))
+AND f.follower_id = (SELECT u.user_id FROM User u WHERE u.username = ?);";
     $statement = $pdo->prepare($sql);
-    $statement->execute();
+    $statement->execute(array($_SESSION['username'],$_SESSION['username']));
 
     while ($row = $statement->fetch()) {
         echo "<article>" . $row["message"] . "</article>";
@@ -52,7 +61,7 @@
 <aside id="rightbar">
     <section id="profile_section">
         <img id="profilepic" src=" ../../images/profilbild.jpg"/>
-        <p><?php echo $_SESSION['username']; ?></p>
+        <p><?php echo $_SESSION['username'];?></p>
     </section>
     <hr/>
     <section id="trend_section">

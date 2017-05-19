@@ -6,12 +6,12 @@ $message = $_POST['text'];
 echo "Nachricht: ";
 echo $message;
 echo "Greife auf Datenbank zu";
-//TODO  : fehler im Datenbankzugriff finden
-$pdo = new PDO("mysql:dbname=THwitterDB;host=localhost", "RubberDuck", "WebProg");
-$sql = "insert into Post(sender_id, message, timestamp)
-values(?, ?, localtime());";
+include 'script_connect_db.php';
+$sql = "INSERT INTO Post(sender_id, message) VALUES (?, ?)";
 
 $statement = $pdo->prepare($sql);
-$result->execute(array($userId, $message));
-echo "in Datenbank geschrieben"
+$statement->execute(array($userId, $message));
+echo "in Datenbank geschrieben";
+echo "<script>window.location='../main/main.php'</script>";
 ?>
+

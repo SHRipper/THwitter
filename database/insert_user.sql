@@ -17,6 +17,14 @@ username, email,password
 'timbirdy','tim.vogel@web.de','1234hallo'
 );
 
+insert into
+User (
+username, email,password
+)
+ values(
+'domi','kern.dominic@web.de','passwort'
+);
+
 
 SELECT
   email,
@@ -25,7 +33,7 @@ FROM User
 WHERE lower(email) = lower(?) OR lower(username) = lower(?);
 
 DELETE FROM THwitterDB.User
-WHERE username LIKE 'testuser%';
+WHERE username = ?;
 
 UPDATE User
 SET username = lower(username)
