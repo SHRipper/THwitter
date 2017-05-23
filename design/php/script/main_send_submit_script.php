@@ -1,8 +1,12 @@
 starte..
+
 <?php
-$userId = "1";//read from cookie
+session_start();
+?>
+
+<?php
+$userId = $_SESSION['user_id'];//read from session
 $message = $_POST['text'];
-//$message = "nachricht 1 von Main_send_submit_script.php";
 echo "Nachricht: ";
 echo $message;
 echo "Greife auf Datenbank zu";
