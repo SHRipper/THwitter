@@ -39,19 +39,20 @@
     <?php
     include '../script/script_connect_db.php';
 
-    $sql = "SELECT post.message AS message, author.username AS author, post.timestamp as time
-FROM Post post 
-JOIN User author ON post.sender_id = author.user_id 
-JOIN Follow f ON author.user_id = f.star_id
-JOIN User follower ON f.follower_id = follower.user_id
-WHERE author.username = ? OR follower.username = ?";
+    $sql = "SELECT post.message AS message, author.username AS author, DATE_FORMAT(post.timestamp , '%d.%m.%Y %H:%i') AS time "
+        . "FROM Post post JOIN User author ON post.sender_id = author.user_id "
+        . "JOIN Follow f ON author.user_id = f.star_id "
+        . "JOIN User follower ON f.follower_id = follower.user_id "
+        . "WHERE author.username = ? OR follower.username = ? ORDER BY post.timestamp DESC";
 
     $statement = $pdo->prepare($sql);
     $statement->execute(array($_SESSION['username'], $_SESSION['username']));
 
     while ($row = $statement->fetch()) {
-        echo "<article><header class='post_header'> <div class='post_author' '>$row[author]</div> <div class='post_time'> $row[time]</div></header>";
-        echo "<section class='post_message'> $row[message]</section></article>";
+        echo "<article>";
+        echo "<header class='post_header' > <div class='post_author' '>$row[author]</div> <div class='post_time'> $row[time]</div></header>";
+        echo "<section class='post_message'> $row[message]</section>";
+        echo "</article>";
     }
     ?>
 
