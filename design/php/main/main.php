@@ -38,21 +38,20 @@
 
     <?php
     include '../script/script_connect_db.php';
-    //Show all: $sql = "SELECT * FROM Post p ORDER BY p.timestamp DESC;";
 
-    //zeige nur posts von leuten denen ich folge
-    $sql = "SELECT
-  p.post_id,
-  p.sender_id,
-  p.message
-  FROM Post p, Follow f
-WHERE (p.sender_id = f.star_id OR  p.sender_id = (SELECT u.user_id FROM User u WHERE u.username = ?))
-AND f.follower_id = (SELECT u.user_id FROM User u WHERE u.username = ?);";
+    $sql = "SELECT post.message AS message, author.username AS author, post.timestamp as time
+FROM Post post 
+JOIN User author ON post.sender_id = author.user_id 
+JOIN Follow f ON author.user_id = f.star_id
+JOIN User follower ON f.follower_id = follower.user_id
+WHERE author.username = ? OR follower.username = ?";
+
     $statement = $pdo->prepare($sql);
-    $statement->execute(array($_SESSION['username'],$_SESSION['username']));
+    $statement->execute(array($_SESSION['username'], $_SESSION['username']));
 
     while ($row = $statement->fetch()) {
-        echo "<article>" . $row["message"] . "</article>";
+        echo "<article><header class='post_header'> <div class='post_author' '>$row[author]</div> <div class='post_time'> $row[time]</div></header>"
+            echo "<section class='post_message'> $row[message]</section></article>";
     }
     ?>
 
@@ -61,7 +60,7 @@ AND f.follower_id = (SELECT u.user_id FROM User u WHERE u.username = ?);";
 <aside id="rightbar">
     <section id="profile_section">
         <img id="profilepic" src=" ../../images/profilbild.jpg"/>
-        <p><?php echo $_SESSION['username'];?></p>
+        <p><?php echo $_SESSION['username']; ?></p>
     </section>
     <hr/>
     <section id="trend_section">
