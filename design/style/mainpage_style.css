@@ -152,10 +152,28 @@ input[type=button], input[type=reset] {
 
 main article {
     margin-top: 10px;
-    padding: 50px;
+    padding: 20px;
     background: #fff;
     border-radius: 2px;
     box-shadow: 3px 3px 1px #a6a6a6;
+}
+
+.post_header {
+    float: left;
+    width: 100%;
+}
+
+.post_author {
+    float: left;
+}
+
+.post_time {
+    float: right;
+}
+
+.post_message {
+    clear: both;
+    margin-top: 50px;
 }
 
 #rightbar #profilepic {

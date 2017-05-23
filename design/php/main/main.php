@@ -50,8 +50,8 @@ WHERE author.username = ? OR follower.username = ?";
     $statement->execute(array($_SESSION['username'], $_SESSION['username']));
 
     while ($row = $statement->fetch()) {
-        echo "<article><header class='post_header'> <div class='post_author' '>$row[author]</div> <div class='post_time'> $row[time]</div></header>"
-            echo "<section class='post_message'> $row[message]</section></article>";
+        echo "<article><header class='post_header'> <div class='post_author' '>$row[author]</div> <div class='post_time'> $row[time]</div></header>";
+        echo "<section class='post_message'> $row[message]</section></article>";
     }
     ?>
 
