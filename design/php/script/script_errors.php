@@ -2,7 +2,7 @@
 function throw_login_error()
 {
     echo "<script>
-		window.location='../php/login/login.php?err=true';
+		window.location='../login/login.php?err=true';
 		</script>";
     die();
 }

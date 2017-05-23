@@ -100,6 +100,7 @@ li > a:hover {
     transition-property: width;
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
+    border-left: none;
 }
 
 #ul_language {
@@ -115,7 +116,6 @@ li > a:hover {
 
 #section_language:hover > #language_link {
     float: left;
-    margin-left: 9px;
 }
 
 #section_language:hover > #ul_language {
