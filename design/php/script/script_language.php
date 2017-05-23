@@ -1,4 +1,5 @@
 <?php
+//Deutsch
 $choose_language["german"]["about"] = "Über";
 $choose_language["german"]["welcome"] = "Melde dich an und beginne deine Reise";
 $choose_language["german"]["input_error"] = "Die Anmeldedaten stimmen nicht überein!";
@@ -11,7 +12,13 @@ $choose_language["german"]["registration_error_email"] = "Diese E-Mail Adresse e
 $choose_language["german"]["registration_error_pw"] = "Die Passwörter stimmen nicht überein!";
 $choose_language["german"]["registration_button_register"] = "Registrieren";
 $choose_language["german"]["registration_link_login"] = "anmelden";
-
+/*
+$choose_language["german"]["main_nav_mainpage"] = "Startseite";
+$choose_language["german"]["main_nav_profile"] = "Profil";
+$choose_language["german"]["main_nav_logout"] = "Abmelden";
+$choose_language["german"]["main_button_sendpost"] = "Senden";
+*/
+//English
 $choose_language["english"]["about"] = "About";
 $choose_language["english"]["welcome"] = "Log in an start your journey";
 $choose_language["english"]["input_error"] = "The username and password you entered did not match our records!";
@@ -24,7 +31,13 @@ $choose_language["english"]["registration_error_email"] = "This E-Mail address a
 $choose_language["english"]["registration_error_pw"] = "The passwords do not match!";
 $choose_language["english"]["registration_button_register"] = "register";
 $choose_language["english"]["registration_link_login"] = "login";
-
+/*
+$choose_language["english"]["main_nav_mainpage"] = "Mainpage";
+$choose_language["english"]["main_nav_profile"] = "Profile";
+$choose_language["english"]["main_nav_logout"] = "Logout";
+$choose_language["english"]["main_button_sendpost"] = "Send";
+*/
+//Spanish
 $choose_language["spanish"]["about"] = "Aboutos";
 $choose_language["spanish"]["welcome"] = "ariva ole!";
 $choose_language["spanish"]["input_error"] = "Error";
@@ -37,7 +50,13 @@ $choose_language["spanish"]["registration_error_email"] = "E-mail Esta direcció
 $choose_language["spanish"]["registration_error_pw"] = "Las contraseñas no coinciden!";
 $choose_language["spanish"]["registration_button_register"] = "registro";
 $choose_language["spanish"]["registration_link_login"] = "inscribirse";
-
+/*
+$choose_language["spanish"]["main_nav_mainpage"] = "casa";
+$choose_language["spanish"]["main_nav_profile"] = "perfil";
+$choose_language["spanish"]["main_nav_logout"] = "finalizar la sesión";
+$choose_language["spanish"]["main_button_sendpost"] = "enviar";
+*/
+//French
 $choose_language["french"]["about"] = "Crossaint";
 $choose_language["french"]["welcome"] = "Baguette Baguette Baguette Baguette Crossaint";
 $choose_language["french"]["input_error"] = "Error";
@@ -50,3 +69,9 @@ $choose_language["french"]["registration_error_email"] = "Cette adresse e-mail e
 $choose_language["french"]["registration_error_pw"] = "Les mots de passe ne correspondent pas!";
 $choose_language["french"]["registration_button_register"] = "s'inscrire";
 $choose_language["french"]["registration_link_login"] = "rejoindre";
+/*
+$choose_language["french"]["main_nav_mainpage"] = "maison";
+$choose_language["french"]["main_nav_profile"] = "profil";
+$choose_language["french"]["main_nav_logout"] = "déconnecter";
+$choose_language["french"]["main_button_sendpost"] = "envoyer";
+*/
