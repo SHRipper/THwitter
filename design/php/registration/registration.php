@@ -101,13 +101,21 @@
                 </li>
                 <li id="section_login_register">
                     <a class="login_button"
-                       onclick="validate_register_input();">Registrieren</a>
+                       onclick="validate_register_input();">
+                        <?php
+                            echo $choose_language[$language]["registration_button_register"];
+                        ?>
+                    </a>
                     <section id="register_section">
                         <p>
                             <?php
                             echo $choose_language[$language]["or"];
                             ?>
-                            <a class="register_link" href="../login/login.php">anmelden</a>
+                            <a class="register_link" href="../login/login.php">
+                                <?php
+                                    echo $choose_language[$language]["registration_link_login"];
+                                ?>
+                            </a>
                         </p>
                     </section>
                 </li>

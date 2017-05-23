@@ -33,7 +33,7 @@ FROM User
 WHERE lower(email) = lower(?) OR lower(username) = lower(?);
 
 DELETE FROM THwitterDB.User
-WHERE username = ?;
+WHERE username LIKE "%test%";
 
 UPDATE User
 SET username = lower(username)

@@ -12,7 +12,7 @@
     <ul>
         <li class="tile" id="startpage"><a href="main.php">Startseite</a></li>
         <li class="tile" id="profilepage"><a href="#">Profil</a></li>
-        <li id="signout" class="tile"><a href="../login/login.php">Abmelden</a></li>
+        <li id="signout" class="tile"><a href="../script/script_logout.php">Abmelden</a></li>
     </ul>
 
     <img src="../../images/duck_logo.png" id="logo">
