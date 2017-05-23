@@ -10,10 +10,11 @@
 <body>
 <header id="login_header">
     <?php
-    include '../script_language.php';
-    if (isset($_GET['lang'])) {
-        $language = $_GET["lang"];
+    include '../script/script_language.php';
+    if (isset($_SESSION['lang'])) {
+        $language = $_SESSION["lang"];
     } else {
+        // Default falls Fehler auftritt
         $language = "german";
     }
     ?>
@@ -21,28 +22,16 @@
         <a href="" class="inactive_link" id="language_link">Language</a>
         <ul id="ul_language">
             <li id="li_german">
-                <form id="login_form_german" method="get" action="login.php">
-                    <input type="hidden" name="lang" value="german" style="display: none">
-                    <a onclick="document.getElementById('login_form_german').submit();">Deutsch</a>
-                </form>
+                <a href="../script/set_language.php?lang=german&site=login">Deutsch</a>
             </li>
             <li id="li_english">
-                <form id="login_form_english" method="get" action="login.php">
-                    <input type="hidden" name="lang" value="english" style="display: none">
-                    <a onclick="document.getElementById('login_form_english').submit();">English</a>
-                </form>
+                <a href="../script/set_language.php?lang=english&site=login">English</a>
             </li>
             <li id="li_spanish">
-                <form id="login_form_spanish" method="get" action="login.php">
-                    <input type="hidden" name="lang" value="spanish" style="display: none">
-                    <a onclick="document.getElementById('login_form_spanish').submit();">Spanish</a>
-                </form>
+                <a href="../script/set_language.php?lang=spanish&site=login">Spanish</a>
             </li>
             <li id="li_french">
-                <form id="login_form_french" method="get" action="login.php">
-                    <input type="hidden" name="lang" value="french" style="display: none">
-                    <a onclick="document.getElementById('login_form_french').submit();">French</a>
-                </form>
+                <a href="../script/set_language.php?lang=french&site=login">French</a>
             </li>
         </ul>
     </section>
