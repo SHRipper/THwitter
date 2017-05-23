@@ -1,4 +1,3 @@
-Login script:
 <?php
 include 'script_errors.php';
 session_start();
@@ -18,7 +17,7 @@ if ($_GET['username'] == '' or $_GET['password'] == '') {
 
         if ($statement->rowCount() == 0) {
             throw_login_error();
-            return;
+
         }
 
         // data exists for given username
