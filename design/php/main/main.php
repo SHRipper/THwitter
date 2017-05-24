@@ -3,16 +3,39 @@
 <head>
     <title>Startseite</title>
     <link rel="stylesheet" href="../../style/mainpage_style.css" type="text/css">
-    <?php session_start(); ?>
 </head>
 
 <body>
-
+<?php
+session_start();
+include '../script/script_language.php';
+if(isset($_SESSION["lang"]))
+{
+    $language = $_SESSION["lang"];
+}
+else
+{
+    // Default für Fehlerbehandlung
+    $language = "german";
+}
+?>
 <nav id="navigation">
     <ul>
-        <li class="tile" id="startpage"><a href="main.php">Startseite</a></li>
-        <li class="tile" id="profilepage"><a href="#">Profil</a></li>
-        <li id="signout" class="tile"><a href="../script/script_logout.php">Abmelden</a></li>
+        <li class="tile" id="startpage"><a href="main.php">
+                <?php
+                    echo $choose_language[$language]["main_nav_mainpage"];
+                ?>
+            </a></li>
+        <li class="tile" id="profilepage"><a href="#">
+                <?php
+                    echo $choose_language[$language]["main_nav_profile"];
+                ?>
+            </a></li>
+        <li id="signout" class="tile"><a href="../script/script_logout.php">
+                <?php
+                    echo $choose_language[$language]["main_nav_logout"];
+                ?>
+            </a></li>
     </ul>
 
     <img src="../../images/duck_logo.png" id="logo">
@@ -32,7 +55,11 @@
         <form action="../script/main_send_submit_script.php" method="post">
             <img id="profilepic" src="../../images/profilbild.jpg"/>
             <textarea id="inputText" name="text" placeholder="Enter text here."></textarea>
-            <input id="button_send" type="submit" value="Senden">
+            <input id="button_send" type="submit" value="
+                <?php
+                    echo $choose_language[$language]["main_button_sendpost"];
+                ?>
+            ">
         </form>
     </section>
 
