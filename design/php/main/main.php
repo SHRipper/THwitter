@@ -53,7 +53,7 @@ else
 <main>
 
     <section id="post">
-        <form id="form_post" action="../script/main_send_submit_script.php" method="post">
+        <form id="form_post" action="../script/main_send_submit_script.php" method="get">
             <img id="profilepic" src="../../images/profilbild.jpg"/>
             <textarea id="inputText" name="text" placeholder="Enter text here."></textarea>
             <input id="button_send"

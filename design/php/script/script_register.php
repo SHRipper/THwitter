@@ -24,9 +24,16 @@ if ($username == '' or $email == '') {
             $statement = $pdo->prepare($sql_new_user);
             $statement->execute(array($username, $email, $password));
 
+
+            $sql_get_user_id = "SELECT user_id FROM User WHERE username = ?";
+            $statement = $pdo->prepare($sql_get_user_id);
+            $statement->execute(array($username));
+            $row = $statement->fetch();
+
             // forward to main page
             session_start();
             $_SESSION['username'] = $username;
+            $_SESSION['user_id'] = $row['user_id'];
             echo "<script>window.location='../main/main.php'</script>";
         } else {
             // user or email already exists

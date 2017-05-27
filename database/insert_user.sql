@@ -35,10 +35,13 @@ WHERE lower(email) = lower(?) OR lower(username) = lower(?);
 DELETE FROM THwitterDB.User
 WHERE username LIKE "%test%";
 
+DELETE FROM Post
+WHERE post_id >= 4;
+
 UPDATE User
 SET username = lower(username)
 WHERE user_id = 3;
 
 SELECT *
-FROM User;
+FROM Post;
 

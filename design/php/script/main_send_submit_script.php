@@ -2,7 +2,7 @@
 session_start();
 
 $userId = $_SESSION['user_id']; //read from session
-$message = $_POST['text'];
+$message = $_GET['text'];
 
 include 'script_connect_db.php';
 
