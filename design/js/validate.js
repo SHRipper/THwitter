@@ -66,6 +66,15 @@ function validate_register_input() {
     }
 }
 
+function validate_post() {
+    var message = document.getElementById('inputText').value;
+    if (message.length > 0 && message.length <= 140) {
+        document.getElementById('form_post').submit();
+    } else if (message.length > 140) {
+        alert(message.length + '/140 -> zu lang!');
+    }
+}
+
 function enter_listener() {
     var form = document.getElementById('login_form');
     form.addEventListener("keydown", function (e) {

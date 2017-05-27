@@ -3,6 +3,7 @@
 <head>
     <title>Startseite</title>
     <link rel="stylesheet" href="../../style/mainpage_style.css" type="text/css">
+    <script language="JavaScript" src="../../js/validate.js"></script>
 </head>
 
 <body>
@@ -52,11 +53,12 @@ else
 <main>
 
     <section id="post">
-        <form action="../script/main_send_submit_script.php" method="post">
+        <form id="form_post" action="../script/main_send_submit_script.php" method="post">
             <img id="profilepic" src="../../images/profilbild.jpg"/>
             <textarea id="inputText" name="text" placeholder="Enter text here."></textarea>
             <input id="button_send"
-                   type="submit"
+                   type="button"
+                   onclick="validate_post();"
                    value="<?php
                     echo $choose_language[$language]["main_button_sendpost"];
                    ?>">

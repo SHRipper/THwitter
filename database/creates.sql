@@ -1,7 +1,7 @@
 use THwitterDB;
 
 create schema THwitterDB;
-DROP TABLE Post;
+
 create table Post(
     post_id   integer auto_increment,
     sender_id integer,
