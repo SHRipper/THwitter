@@ -55,18 +55,18 @@ else
         <form action="../script/main_send_submit_script.php" method="post">
             <img id="profilepic" src="../../images/profilbild.jpg"/>
             <textarea id="inputText" name="text" placeholder="Enter text here."></textarea>
-            <input id="button_send" type="submit" value="
-                <?php
+            <input id="button_send"
+                   type="submit"
+                   value="<?php
                     echo $choose_language[$language]["main_button_sendpost"];
-                ?>
-            ">
+                   ?>">
         </form>
     </section>
 
     <?php
     include '../script/script_connect_db.php';
 
-    $sql = "SELECT message AS message, username AS author, DATE_FORMAT(timestamp, '%d.%m.%Y %H:%i') AS time
+    $sql = "SELECT message AS message, username AS author, DATE_FORMAT(DATE_ADD(timestamp, INTERVAL 2 HOUR), '%d.%m.%Y %H:%i') AS time
             FROM Post post
             JOIN User author ON post.sender_id = author.user_id
             ORDER BY timestamp DESC";
