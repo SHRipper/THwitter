@@ -4,21 +4,21 @@ insert into
 Post(
 	sender_id, message, timestamp
 )values(
-	1, 'hallo ihr  penner von user 1', localtime()
+	1, 'Ich bin Vegetarier!', localtime()
 );
 
 insert into
 Post(
 	sender_id, message, timestamp
 )values(
-	2, 'hallo ihr penner 2 von user 2', localtime()
+	2, 'Ich mache Crossfit!', localtime()
 );
 
 insert into
 Post(
 	sender_id, message, timestamp
 )values(
-	3, 'hallo ihr penner 3 von user 3', localtime()
+	3, 'Feministin, don\'t judge', localtime()
 );
 
 select * from Post;

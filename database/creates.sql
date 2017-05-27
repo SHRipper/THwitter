@@ -2,10 +2,12 @@ use THwitterDB;
 
 create schema THwitterDB;
 
+DROP TABLE Post;
+
 create table Post(
     post_id   integer auto_increment,
     sender_id integer,
-    message   VARCHAR(140),
+    message   VARCHAR(180),
     timestamp timestamp,
     primary key(post_id),
     foreign key(sender_id) 
@@ -30,6 +32,6 @@ create table Follow(
 );
 
 SELECT *
-FROM Post;
+FROM User;
 
 

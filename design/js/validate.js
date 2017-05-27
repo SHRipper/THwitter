@@ -68,10 +68,10 @@ function validate_register_input() {
 
 function validate_post() {
     var message = document.getElementById('inputText').value;
-    if (message.length > 0 && message.length <= 140) {
+    if (message.length > 0 && message.length <= 180) {
         document.getElementById('form_post').submit();
-    } else if (message.length > 140) {
-        alert(message.length + '/140 -> zu lang!');
+    } else if (message.length > 180) {
+        alert(message.length + '/180 -> zu lang!');
     }
 }
 
