@@ -78,6 +78,7 @@ main {
     width: 50%;
     height: 100%;
     margin-top: 20px;
+    transition: width 1s;
 }
 
 #header_shadow {
@@ -110,7 +111,7 @@ main {
     margin-left: 15px;
     padding: 3px;
     float: left;
-    width: 85%;
+    width: calc(100% - 50px - 30px);
     height: 45px;
     position:relative;
     font-size:12px;
@@ -180,8 +181,8 @@ main article {
 #rightbar #profilepic {
     margin: auto;
     margin-top: 20px;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     display: block;
     border-radius: 100px;
 }
@@ -265,3 +266,33 @@ hr{
 #trend_list > li:hover{
     font-size: 110%;
 }
+
+@media (max-width: 1000px) {
+    #leftbar {
+        display: none;
+        opacity: 0;
+    }
+    main {
+        width: 75%;
+    }
+    #trend_section {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    #profilepic {
+        display: none;
+    }
+    #rightbar, #leftbar {
+        opacity: 0;
+    }
+    main {
+        width: 100%;
+    }
+    #post #inputText {
+        width: calc(100% - 30px);
+    }
+}
+
+
