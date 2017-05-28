@@ -270,7 +270,6 @@ hr{
 @media (max-width: 1000px) {
     #leftbar {
         display: none;
-        opacity: 0;
     }
     main {
         width: 75%;
@@ -280,12 +279,9 @@ hr{
     }
 }
 
-@media (max-width: 480px) {
-    #profilepic {
+@media (max-width: 768px) {
+    #profilepic, #rightbar, #leftbar {
         display: none;
-    }
-    #rightbar, #leftbar {
-        opacity: 0;
     }
     main {
         width: 100%;
