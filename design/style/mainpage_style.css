@@ -267,13 +267,31 @@ hr {
     font-size: 110%;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 999px) {
+    #leftbar {
+        display: none;
+    }
+
+    main {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
     #profilepic, #rightbar, #leftbar {
         display: none;
     }
 
-    #rightbar {
+    #startpage, #profilepage {
+        /*do anything to make it disappear*/
         display: none;
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+    }
+
+    #logo {
+        margin-left: 20px;
     }
 
     main {

@@ -4,6 +4,7 @@
     <title>Startseite</title>
     <link rel="stylesheet" href="../../style/mainpage_style.css" type="text/css">
     <script language="JavaScript" src="../../js/validate.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 
 <body>
@@ -22,7 +23,7 @@ else
 ?>
 <nav id="navigation">
     <ul>
-        <li class="tile" id="startpage"><a href="main.php">
+        <li id="startpage" class="tile"><a href="main.php">
                 <?php
                     echo $choose_language[$language]["main_nav_mainpage"];
                 ?>
