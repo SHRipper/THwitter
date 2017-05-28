@@ -16,6 +16,8 @@ $choose_language["german"]["main_nav_mainpage"] = "Startseite";
 $choose_language["german"]["main_nav_profile"] = "Profil";
 $choose_language["german"]["main_nav_logout"] = "Abmelden";
 $choose_language["german"]["main_button_sendpost"] = "Senden";
+$choose_language["german"]["main_form_hint"] = "Schreib etwas...";
+
 
 //English
 $choose_language["english"]["about"] = "About";
@@ -34,6 +36,7 @@ $choose_language["english"]["main_nav_mainpage"] = "Mainpage";
 $choose_language["english"]["main_nav_profile"] = "Profile";
 $choose_language["english"]["main_nav_logout"] = "Logout";
 $choose_language["english"]["main_button_sendpost"] = "Send";
+$choose_language["english"]["main_form_hint"] = "Enter text here.";
 
 //Spanish
 $choose_language["spanish"]["about"] = "Aboutos";
@@ -52,6 +55,7 @@ $choose_language["spanish"]["main_nav_mainpage"] = "casa";
 $choose_language["spanish"]["main_nav_profile"] = "perfil";
 $choose_language["spanish"]["main_nav_logout"] = "finalizar la sesión";
 $choose_language["spanish"]["main_button_sendpost"] = "enviar";
+$choose_language["spanish"]["main_form_hint"] = "Could not connect to translator service";
 
 //French
 $choose_language["french"]["about"] = "Crossaint";
@@ -70,3 +74,4 @@ $choose_language["french"]["main_nav_mainpage"] = "maison";
 $choose_language["french"]["main_nav_profile"] = "profil";
 $choose_language["french"]["main_nav_logout"] = "déconnecter";
 $choose_language["french"]["main_button_sendpost"] = "envoyer";
+$choose_language["french"]["main_form_hint"] = "Ecrire quelque chose...";
