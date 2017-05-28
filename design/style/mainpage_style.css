@@ -78,7 +78,6 @@ main {
     width: 50%;
     height: 100%;
     margin-top: 20px;
-    transition: width 1s;
 }
 
 #header_shadow {
@@ -113,11 +112,11 @@ main {
     float: left;
     width: calc(100% - 50px - 30px);
     height: 45px;
-    position:relative;
-    font-size:12px;
-    -webkit-border-radius:2px;
-    -moz-border-radius:2px;
-    border-radius:2px;
+    position: relative;
+    font-size: 12px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
     resize: none;
     font-family: Verdana;
 }
@@ -133,13 +132,13 @@ input[type=button], input[type=reset] {
     cursor: pointer;
 }
 
-#button_send{
-    position:absolute;
-    margin-top:60px;
-    margin-left:-76px;
-    -webkit-border-radius:2px;
-    -moz-border-radius:2px;
-    border-radius:2px;
+#button_send {
+    position: absolute;
+    margin-top: 60px;
+    margin-left: -76px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
     background-color: #ff8000;
     float: right;
     border: none;
@@ -147,8 +146,9 @@ input[type=button], input[type=reset] {
     color: black;
     cursor: pointer;
 }
-#button_send:hover{
-    background-color:#ff9933;
+
+#button_send:hover {
+    background-color: #ff9933;
 }
 
 main article {
@@ -208,7 +208,6 @@ main article {
     color: blue;
 }
 
-
 .ad {
     width: calc(100% - 10px);
     height: auto;
@@ -232,8 +231,8 @@ main article {
     border-left: none;
 }
 
-hr{
-    margin-top:20px;
+hr {
+    margin-top: 20px;
     color: black;
 }
 
@@ -249,46 +248,40 @@ hr{
     margin-top: 20px;
     position: relative;
 }
+
 #trend_list > li {
     position: absolute;
     font-size: 100%;
     transition: font-size .1s ease-in-out;
 }
 
-#trend_list li:nth-child(2){
+#trend_list li:nth-child(2) {
     margin-top: 40px;
 }
 
-#trend_list li:nth-child(3){
+#trend_list li:nth-child(3) {
     margin-top: 80px;
 }
 
-#trend_list > li:hover{
+#trend_list > li:hover {
     font-size: 110%;
 }
 
-@media (max-width: 1000px) {
-    #leftbar {
-        display: none;
-    }
-    main {
-        width: 75%;
-    }
-    #trend_section {
-        font-size: 80%;
-    }
-}
-
-@media (max-width: 768px) {
+@media only screen and (max-width: 1000px) {
     #profilepic, #rightbar, #leftbar {
         display: none;
     }
+
+    #rightbar {
+        display: none;
+    }
+
     main {
         width: 100%;
     }
+
     #post #inputText {
         width: calc(100% - 30px);
     }
 }
-
 
