@@ -4,6 +4,7 @@
     <title>Register</title>
     <link rel="stylesheet" type="text/css" href="../../style/login_registration_style.css">
     <script language="JavaScript" src="../../js/validate.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 
 <body onload="enter_listener();">

@@ -4,6 +4,7 @@
     <title>Anmelden</title>
     <link rel="stylesheet" type="text/css" href="../../style/login_registration_style.css">
     <script src="../../js/validate.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <?php include '../script/script_session.php'; ?>
 
 </head>

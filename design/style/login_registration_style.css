@@ -336,5 +336,44 @@ p, a {
     left: 0px;
 }
 
+@media only screen and (max-width: 767px) {
+    #welcome_text_wrapper {
+        margin-top: 20px;
+    }
+
+    #site_name_wrapper {
+        display: none;
+    }
+
+    #logo {
+        width: 70px;
+        height: 70px;
+        margin: 15px;
+        margin-left: 0px;
+    }
+
+    #upper_grass {
+        bottom: 40px;
+    }
+
+    #water {
+        height: 41px;
+    }
+
+    #duck {
+        width: 50px;
+        height: 50px;
+    }
+
+    #login_form {
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-height: 550px) {
+    #upper_grass, #water, #duck_move_wrapper, #lower_grass {
+        display: none;
+    }
+}
 
 
