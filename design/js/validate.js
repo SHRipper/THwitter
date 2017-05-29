@@ -17,6 +17,7 @@ function compare_passwords() {
     else
     {
         alert("Passwort zu lang (weniger als 50 Zeichen)!");
+        return false;
     }
 }
 
@@ -30,6 +31,7 @@ function check_username() {
     else
     {
         alert("Username zu lang (weniger als 50 Zeichen)!");
+        return false;
     }
 }
 
@@ -44,6 +46,7 @@ function check_email() {
     else
     {
         alert("E-Mail zu lang (weniger als 50 Zeichen)!");
+        return false;
     }
 }
 
