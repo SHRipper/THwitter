@@ -10,21 +10,41 @@ function login_error() {
 function compare_passwords() {
     var pw1 = document.getElementById('input_password');
     var pw2 = document.getElementById('input_password_confirm');
-    // true if they match and are not empty
-    return (pw1.value == pw2.value && pw1.value != '' && pw2.value != '');
+    if(pw1.length <= 50 && pw2.length <= 50) {
+        // true if they match and are not empty
+        return (pw1.value == pw2.value && pw1.value != '' && pw2.value != '');
+    }
+    else
+    {
+        alert("Passwort zu lang (weniger als 50 Zeichen)!");
+    }
 }
 
 function check_username() {
     var username = document.getElementById('input_username').value
     var re = /^\w+$/;
-    return re.test(username);
+    if(username.length <= 50)
+    {
+        return re.test(username);
+    }
+    else
+    {
+        alert("Username zu lang (weniger als 50 Zeichen)!");
+    }
 }
 
 function check_email() {
     var email = document.getElementById('input_email').value;
     // taken from another project
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
+    if(email.length <= 50 )
+    {
+        return re.test(email);
+    }
+    else
+    {
+        alert("E-Mail zu lang (weniger als 50 Zeichen)!");
+    }
 }
 
 
