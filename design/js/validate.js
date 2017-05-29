@@ -10,7 +10,7 @@ function login_error() {
 function compare_passwords() {
     var pw1 = document.getElementById('input_password');
     var pw2 = document.getElementById('input_password_confirm');
-    if(pw1.length <= 50 && pw2.length <= 50) {
+    if(pw1.value.length <= 50 && pw2.value.length <= 50) {
         // true if they match and are not empty
         return (pw1.value == pw2.value && pw1.value != '' && pw2.value != '');
     }
