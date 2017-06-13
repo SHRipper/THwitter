@@ -4,6 +4,7 @@
     <title>Startseite</title>
     <link rel="stylesheet" href="../../style/mainpage_style.css" type="text/css">
     <script language="JavaScript" src="../../js/validate.js"></script>
+    <script language="JavaScript" src="../../js/ajax_request.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 
