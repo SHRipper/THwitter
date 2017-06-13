@@ -4,6 +4,7 @@
     <title>Startseite</title>
     <link rel="stylesheet" href="../../style/mainpage_style.css" type="text/css">
     <script language="JavaScript" src="../../js/validate.js"></script>
+    <script language="JavaScript" src="../../js/postMessage.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 
@@ -54,14 +55,14 @@ else
 <main>
 
     <section id="post">
-        <form id="form_post" action="../script/main_send_submit_script.php" method="get">
+        <form id="form_post" onSubmit="return false;">
             <img id="profilepic" src="../../images/profilbild.jpg"/>
             <textarea id="inputText" name="text" placeholder="<?php
             echo $choose_language[$language]["main_form_hint"];
             ?>"></textarea>
             <input id="button_send"
                    type="button"
-                   onclick="validate_post();"
+                   onclick="sendNewPost();"
                    value="<?php
                     echo $choose_language[$language]["main_button_sendpost"];
                    ?>">
