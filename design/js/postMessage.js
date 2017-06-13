@@ -7,7 +7,7 @@ function sendNewPost() {
         req.onreadystatechange = () => {
             if (req.readyState === 4) {
                 if (!(req.status >= 200 && req.status < 300)) {
-                    alert("Error in request!");
+                    alert("Fehler beim sender der Nachricht!");
                 } else {
                     document.getElementById('inputText').value = "";
                 }
