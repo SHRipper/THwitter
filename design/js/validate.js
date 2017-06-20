@@ -92,13 +92,10 @@ function validate_register_input() {
 function validate_post() {
     var message = document.getElementById('inputText').value;
     if (message.length > 0 && message.length <= 180) {
-        var reg = /</;
-        if (!reg.test(message)) {
-            document.getElementById('form_post').submit();
-        }
-    } else if (message.length > 180) {
-        alert(message.length + '/180 -> zu lang!');
+        return true;
     }
+    alert(message.length + '/180 -> zu lang!');
+    return false;
 }
 
 function enter_listener() {
