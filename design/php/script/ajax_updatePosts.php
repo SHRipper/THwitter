@@ -1,6 +1,10 @@
 <?php
 session_start();
 include '../script/script_connect_db.php';
+header("Content-Type: application/json");
+
+//$_Session...
+// $lastSeenId
 
 $highestId = -1;
 if (isset($_SESSION['lastPostId'])) {

@@ -1,3 +1,6 @@
+/**
+ * Created by walterda64090 on 13.06.2017.
+ */
 
 window.setInterval(get_posts_async(), 10000);
 
@@ -14,8 +17,7 @@ function get_posts_async() {
                 if (contentType && contentType.indexOf("application/json") !== -1)
                 {
                     let result = JSON.parse(req.response);
-                    let resultMsg = "Request successful! Result: " + result.result + " - Info: " + result.info;
-                    alert(resultMsg);
+                    insert_new_messages(result);
                 }
             }
             else
@@ -25,4 +27,20 @@ function get_posts_async() {
         }
     }
     req.send();
+}
+
+function insert_new_messages(messages) {
+    for (let i = 1; i >= 0; i--) {
+        let article = document.getElementsByTagName("article")[0].cloneNode(true);
+        let author = article.childNodes[0].childNodes[1].innerText;
+        let time = article.childNodes[0].childNodes[3].innerText;
+        let message = article.childNodes[1].innerText;
+
+        author = messages[0].author;
+        time = messages[0].time;
+        message = messages[0].message;
+
+        let parent = document.getElementById('articles');
+        parent.insertBefore(article, parent.firstChild);
+    }
 }
