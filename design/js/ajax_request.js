@@ -1,6 +1,3 @@
-/**
- * Created by walterda64090 on 13.06.2017.
- */
 
 window.setInterval(get_posts_async(), 10000);
 
@@ -18,7 +15,7 @@ function get_posts_async() {
                 {
                     let result = JSON.parse(req.response);
                     let resultMsg = "Request successful! Result: " + result.result + " - Info: " + result.info;
-                    message(resultMsg);
+                    alert(resultMsg);
                 }
             }
             else
