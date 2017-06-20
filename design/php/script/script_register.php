@@ -22,6 +22,7 @@ if ($username == '' or $email == '') {
                               ?,?,?
                               );";
             $statement = $pdo->prepare($sql_new_user);
+
             $statement->execute(array($username, $email, $password));
 
 

@@ -13,12 +13,9 @@
 <?php
 session_start();
 include '../script/script_language.php';
-if(isset($_SESSION["lang"]))
-{
+if (isset($_SESSION["lang"])) {
     $language = $_SESSION["lang"];
-}
-else
-{
+} else {
     // Default für Fehlerbehandlung
     $language = "german";
 }
@@ -27,17 +24,17 @@ else
     <ul>
         <li id="startpage" class="tile"><a href="main.php">
                 <?php
-                    echo $choose_language[$language]["main_nav_mainpage"];
+                echo $choose_language[$language]["main_nav_mainpage"];
                 ?>
             </a></li>
         <li class="tile" id="profilepage"><a href="#">
                 <?php
-                    echo $choose_language[$language]["main_nav_profile"];
+                echo $choose_language[$language]["main_nav_profile"];
                 ?>
             </a></li>
         <li id="signout" class="tile"><a href="../script/script_logout.php">
                 <?php
-                    echo $choose_language[$language]["main_nav_logout"];
+                echo $choose_language[$language]["main_nav_logout"];
                 ?>
             </a></li>
     </ul>
@@ -65,7 +62,7 @@ else
                    type="button"
                    onclick="sendNewPost();"
                    value="<?php
-                    echo $choose_language[$language]["main_button_sendpost"];
+                   echo $choose_language[$language]["main_button_sendpost"];
                    ?>">
         </form>
     </section>
@@ -73,20 +70,26 @@ else
     <?php
     include '../script/script_connect_db.php';
 
-    $sql = "SELECT message AS message, username AS author, DATE_FORMAT(DATE_ADD(timestamp, INTERVAL 2 HOUR), '%d.%m.%Y %H:%i') AS time
+    $sql = "SELECT post_id AS id, message AS message, username AS author, DATE_FORMAT(DATE_ADD(timestamp, INTERVAL 2 HOUR), '%d.%m.%Y %H:%i') AS time
             FROM Post post
             JOIN User author ON post.sender_id = author.user_id
             ORDER BY timestamp DESC";
 
     $statement = $pdo->prepare($sql);
     $statement->execute();
-    //TODO: Display posts longer than one line
+
+    $highestId = -1;
     while ($row = $statement->fetch()) {
+        if ($row[id] > $highestId) {
+            $highestId = $row[id];
+        }
+
         echo "<article>";
         echo "<header class='post_header' > <div class='post_author' '>$row[author]</div> <div class='post_time'> $row[time]</div></header>";
         echo "<section class='post_message'> $row[message]</section>";
         echo "</article>";
     }
+    $_SESSION['lastPostId'] = $highestId;
     ?>
 
 </main>
