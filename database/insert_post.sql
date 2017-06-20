@@ -18,9 +18,10 @@ insert into
 Post(
 	sender_id, message, timestamp
 )values(
-	3, 'Feministin, don\'t judge', localtime()
+	3, '<script type="text/javascript">alert("User: baum / Passwort: baumhaus")</script>', localtime()
 );
 
 select * from Post;
 
 DELETE FROM Post
+WHERE post_id = 26;

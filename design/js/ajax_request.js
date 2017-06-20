@@ -17,8 +17,8 @@ function get_posts_async() {
                 if (contentType && contentType.indexOf("application/json") !== -1)
                 {
                     let result = JSON.parse(req.response);
-                    let resultMsg = "Request successful! Result:";
-                    alert(resultMsg);
+                    let resultMsg = "Request successful! Result: " + result.result + " - Info: " + result.info;
+                    message(resultMsg);
                 }
             }
             else

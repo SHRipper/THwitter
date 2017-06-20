@@ -24,7 +24,8 @@ username, email,password
  values(
 'domi','kern.dominic@web.de','passwort'
 );
-
+SELECT *
+FROM User;
 
 SELECT
   email,
@@ -36,7 +37,7 @@ DELETE FROM User
 WHERE user_id >= 5;
 
 DELETE FROM Post
-WHERE sender_id >= 5;
+WHERE post_id >= 12;
 
 UPDATE User
 SET username = lower(username)
