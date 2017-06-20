@@ -17,7 +17,6 @@ if ($_GET['username'] == '' or $_GET['password'] == '') {
 
         if ($statement->rowCount() == 0) {
             throw_login_error();
-
         }
         //get userID from username
         $sql = "SELECT user_id

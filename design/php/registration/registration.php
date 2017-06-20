@@ -139,7 +139,8 @@
 </main>
 
 <?php
-if (isset($_GET['err'])) {
+if (isset($_GET['
+'])) {
     $error_type = $_GET['err'];
     echo "<script>register_error('" . $error_type . "');</script>";
 }
