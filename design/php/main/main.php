@@ -80,12 +80,12 @@ if (isset($_SESSION["lang"])) {
 
     $highestId = -1;
     while ($row = $statement->fetch()) {
-        if ($row[id] > $highestId) {
-            $highestId = $row[id];
+        if ($row['id'] > $highestId) {
+            $highestId = $row['id'];
         }
 
         echo "<article>";
-        echo "<header class='post_header' > <div class='post_author' '>$row[author]</div> <div class='post_time'> $row[time]</div></header>";
+        echo "<header class='post_header' > <div class='post_author'>$row[author]</div> <div class='post_time'> $row[time]</div></header>";
         echo "<section class='post_message'> $row[message]</section>";
         echo "</article>";
     }
