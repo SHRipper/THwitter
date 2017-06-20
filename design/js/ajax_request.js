@@ -32,15 +32,11 @@ function get_posts_async() {
 function insert_new_messages(messages) {
     if (messages.length === 0) return;
 
-    let article = document.getElementsByTagName("article")[0].cloneNode(true);
-    let author = article.childNodes[0].childNodes[1].innerText;
-    let time = article.childNodes[0].childNodes[3].innerText;
-    let message = article.childNodes[1].innerText;
-
     for (let i = messages.length - 1; i >= 0; i--) {
-        author = messages[i].author;
-        time = messages[i].time;
-        message = messages[i].message;
+        let article = document.getElementsByTagName("article")[0].cloneNode(true);
+        article.childNodes[0].childNodes[1].innerText = messages[i].author;
+        article.childNodes[0].childNodes[3].innerText = messages[i].time;
+        article.childNodes[1].innerText = messages[i].message;
 
         let parent = document.getElementById('articles');
         parent.insertBefore(article, parent.firstChild);

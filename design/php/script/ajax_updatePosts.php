@@ -26,5 +26,3 @@ $_SESSION['lastPostId'] = $highestId;
 
 $JSON = json_encode($result);
 echo $JSON;
-
-?>
