@@ -17,5 +17,6 @@ if (isset($request) && !empty($request)) {
         return;
     }
 }
+var_dump(http_response_code(500));
 echo "WTF";
 ?>

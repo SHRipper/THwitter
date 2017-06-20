@@ -10,6 +10,7 @@ function sendNewPost() {
                     alert("Fehler beim sender der Nachricht!");
                 } else {
                     document.getElementById('inputText').value = "";
+                    get_posts_async();
                 }
             }
         }
